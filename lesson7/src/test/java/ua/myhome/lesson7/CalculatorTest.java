@@ -16,7 +16,16 @@ public class CalculatorTest {
         calc.startCalculation(12,1);
         assertEquals(13.0, calc.getResultSun());
         assertEquals(11.0, calc.getResultMin());
-        assertEquals(0.0, calc.getResultMnog());
-        assertEquals(0.0, calc.getResultDel());
+        assertEquals(12.0, calc.getResultMnog());
+        assertEquals(12.0, calc.getResultDel());
+    }
+    @Test
+    public void strtRunTme() throws Exception {
+        Calculator calc=new Calculator();
+        calc.startCalculation(12,1);
+        assertEquals(13.0, calc.getResultSun());
+        assertEquals(11.0, calc.getResultMin());
+        assertEquals(12.0, calc.getResultMnog());
+        assertEquals(12.0, calc.getResultDel());
     }
 }

@@ -56,10 +56,16 @@ class Calculator{
         Метод реализующий деление
     **/
     private void delPer(double num) throws UserException{
-        if(resDel>0 || num==0) {
-            resDel /= num;
+        if (firstPar){
+            resDel=num;
         }else{
-            throw new UserException("The data argument is not suitable for the division operation "+resDel+"/"+num);
+            if (num > 0) {
+                resDel /= num;
+
+            } else {
+                resDel = num;
+                throw new UserException("The data argument is not suitable for the division operation " + resDel + "/" + num);
+            }
         }
     }
     /*
