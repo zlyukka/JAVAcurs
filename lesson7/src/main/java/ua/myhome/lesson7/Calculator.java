@@ -17,7 +17,7 @@ class Calculator{
     /*
         Основной метод принимающий параметры и выполняющий с ними все возможные операции + - * /
      **/
-    public void startCalculation(double ... param){
+    public void startCalculation(double ... param) throws UserException{
         for(Double par:param){
             sumPer(par);
             minusPer(par);
@@ -55,11 +55,11 @@ class Calculator{
     /*
         Метод реализующий деление
     **/
-    private void delPer(double num){
-        if(resDel>0) {
+    private void delPer(double num) throws UserException{
+        if(resDel>0 || num==0) {
             resDel /= num;
         }else{
-            resDel = num;
+            throw new UserException("The data argument is not suitable for the division operation "+resDel+"/"+num);
         }
     }
     /*

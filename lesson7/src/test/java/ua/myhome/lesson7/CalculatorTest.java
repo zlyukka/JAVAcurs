@@ -6,19 +6,17 @@ import static junit.framework.Assert.assertEquals;
 
 
 public class CalculatorTest {
-
-    @Test
-    public void teststartCalculation() throws Exception {
+    /**
+     * Тест с таким Ексцепшином безполезен так как ексцепшен переурывает тест
+     * @throws UserException
+     */
+    @Test (expected = UserException.class)
+    public void teststartCalculation() throws UserException {
         Calculator calc=new Calculator();
-        calc.startCalculation(12,6);
-        assertEquals(18.0, calc.getResultSun());
-        assertEquals(6.0, calc.getResultMin());
-        assertEquals(72.0, calc.getResultMnog());
-        assertEquals(2.0, calc.getResultDel());
-    }
-
-    @Test
-    public void testStartCalculation1() throws Exception {
-
+        calc.startCalculation(12,1);
+        assertEquals(13.0, calc.getResultSun());
+        assertEquals(11.0, calc.getResultMin());
+        assertEquals(0.0, calc.getResultMnog());
+        assertEquals(0.0, calc.getResultDel());
     }
 }
